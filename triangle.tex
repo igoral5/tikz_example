@@ -1,0 +1,28 @@
+\documentclass{minimal}
+\usepackage{xltxtra}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{russian}
+\setotherlanguage{english}
+\setmainfont{Times New Roman}
+\newfontfamily{\cyrillicfont}{Times New Roman}
+\usepackage{tkz-euclide}
+\begin{document}
+	\colorlet{input}{red!80!black}
+	\colorlet{output}{green!70!black}
+	\colorlet{triangle}{orange!40}
+	\begin{tikzpicture}[scale=1.25,thick,help lines/.style={dashed, ultra thin,draw=black!50}]
+		\tkzDefPoint(0,0){A}
+		\tkzDefPoint(1.25+rand(),0.25+rand()){B}
+		\tkzInterCC(A,B)(B,A) \tkzGetPoints{C}{X}
+		\tkzFillPolygon[triangle,opacity=.5](A,B,C)
+		\tkzDrawSegment[input](A,B)
+		\tkzDrawSegments[output](A,C B,C)
+		\tkzDrawCircles[help lines](A,B B,A)
+		\tkzDrawPoints[fill=gray,opacity=.5](A,B,C)
+		\tkzLabelPoints(A,B)
+		\tkzLabelCircle[below=12pt](A,B)(180){$D$}
+		\tkzLabelCircle[above=12pt](B,A)(180){$E$}
+		\tkzLabelPoint[above,red](C){$C$}	
+	\end{tikzpicture}
+\end{document}
