@@ -1,0 +1,37 @@
+\documentclass{minimal}
+\usepackage{xltxtra}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{russian}
+\setotherlanguage{english}
+\setmainfont{Times New Roman}
+\newfontfamily{\cyrillicfont}{Times New Roman}
+\usepackage{amsmath}
+\usepackage{physics}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc}
+\tikzset{
+    >={Stealth[width'=2pt 0.1, length=5pt]}
+}
+\begin{document}
+    \begin{tikzpicture}[scale=2]
+        \def\mg{-1.4}
+        \def\angle{30}
+        \draw (0,0) -- (5,0);
+        \draw (0,0) -- (\angle:5);
+        \draw (0.5, 0) arc[start angle=0, end angle=\angle, radius=0.5];
+        \node at (0.8, 0.2) {$\alpha$};
+        \draw[rotate=\angle] (2, 0) rectangle(3, 0.5);
+        \coordinate (O) at ($(0,0)!1!\angle:(2.5,0.25)$);
+        \coordinate (mg) at ($(O) + (0, \mg)$);
+        \draw[fill] (O) circle (1pt);
+        \draw[->] (O) -- node[right] {$\vec{mg}$} (mg);
+        \draw[->] (O) -- node[above] {$\vec{F_x}$} ($(O)!1!\angle:+({sin(\angle) * \mg},0)$) coordinate (x);
+        \draw[->] (O) -- node[right] {$\vec{F_y}$} ($(O)!1!\angle:+(0,{cos(\angle) * \mg})$) coordinate (y);
+        \draw[->] (O) -- ($(O)!1!\angle:+(0.4,0)$);
+        \node at ($(O) + (0.18, 0.26)$) {$\vec{F_{\text{тр}}}$};
+        \draw[->] (O) -- node[right] {$\vec{N}$} ($(O)!1!\angle:+(0,{cos(\angle) * -\mg})$);
+        \draw[dashed] (mg) -- (x);
+        \draw[dashed] (mg) -- (y);
+    \end{tikzpicture}
+\end{document}

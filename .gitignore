@@ -1,0 +1,6 @@
+*.pdf
+*.sublime-project
+*.sublime-workspace
+*.aux
+*.log
+*.synctex.gz
