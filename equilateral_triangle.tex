@@ -1,0 +1,23 @@
+\documentclass{minimal}
+\usepackage{xltxtra}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{russian}
+\setotherlanguage{english}
+\setmainfont{Times New Roman}
+\newfontfamily{\cyrillicfont}{Times New Roman}
+\usepackage{tkz-euclide}
+\begin{document}
+	\noindent Равносторонний треугольник
+	
+	\begin{tikzpicture}[scale=1]
+		\tkzDefPoint(2,3){A}
+		\tkzDefShiftPoint[A](30:3){B}
+		\tkzDefShiftPoint[A](-30:3){C}
+		\tkzDrawPolygon(A,B,C)
+		\tkzDrawPoints(A,B,C)
+		\tkzLabelPoints[right](B,C)
+		\tkzLabelPoints[above left](A)
+		\tkzMarkSegments[mark=|](A,B A,C B,C)
+	\end{tikzpicture}
+\end{document}
