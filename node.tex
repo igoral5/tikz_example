@@ -1,0 +1,35 @@
+\documentclass{minimal}
+\usepackage{xltxtra}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{russian}
+\setotherlanguage{english}
+\setmainfont{Times New Roman}
+\newfontfamily{\cyrillicfont}{Times New Roman}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,shapes}
+\tikzset{
+    >={Stealth[width'=2pt 0.1, length=5pt]}
+}
+\begin{document}
+	\begin{tikzpicture}
+		\draw (4,2) node[draw, color=red, fill=yellow, text=blue] {TikZ};
+	\end{tikzpicture}
+	\vspace{0.5cm}
+
+	\begin{tikzpicture}
+		\node (r) at (0,1) [draw, rectangle] {rectangle};
+		\node (c) at (1.5,0) [draw, circle] {circle};
+		\node (e) at (3,1) [draw, ellipse] {ellipse};
+		\draw[->] (r.east) -- (e.west);
+		\draw[->] (r.south) -- (c.north west);
+		\draw[->] (e.south) -- (c.north east);
+	\end{tikzpicture}
+	\vspace{0.5cm}
+
+	\begin{tikzpicture}
+		\draw[fill=red] (4,2) circle[radius=0.1];
+		\node at (4,2) [draw, rectangle] {rectangle};
+	\end{tikzpicture}
+\end{document}
