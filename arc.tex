@@ -1,0 +1,31 @@
+\documentclass{minimal}
+\usepackage{xltxtra}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{russian}
+\setotherlanguage{english}
+\setmainfont{Times New Roman}
+\newfontfamily{\cyrillicfont}{Times New Roman}
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\tikzset{
+    >={Stealth[width'=2pt 0.1, length=5pt]}
+}
+\begin{document}
+	\noindent Две дуги радиусом $1.5~\text{см}$, начинаются в точке $(2, 0)$. У первой дуги начальный угол $-80\degree$, конечный угол $150\degree$. Вторая дуга начальный угол $80\degree$, конечный угол $-150\degree$.
+
+	\begin{tikzpicture}
+		\draw[thin,dotted] (-5,-5) grid (5,5);
+		\draw[->] (-5.2,0) -- (5.2,0) node[right] {$X$};
+		\draw[->] (0,-5.2) -- (0,5.2) node[above] {$Y$};
+		\node[below left] at (0,0) {$O$};
+		\draw[ultra thick] (0,0) -- (2,0) arc[start angle=-80, end angle=150, radius=1.5];
+		\draw[dashed] (2,0) -- ++(100:1.5) -- ++(150:1.5);
+		\draw[fill] (2,0) + (100:1.5) circle(1.5pt) node[above right] {$O_1$};
+		\draw[ultra thick] (2,0) arc[start angle=80, end angle=-150, radius=1.5];
+		\draw[dashed] (2,0) -- ++(-100:1.5) -- ++(-150:1.5);
+		\draw[fill] (2,0) + (-100:1.5) circle(1.5pt) node[below right] {$O_2$};
+	\end{tikzpicture}
+\end{document}
