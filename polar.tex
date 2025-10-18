@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage{xltxtra}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{russian}
+\setotherlanguage{english}
+\setmainfont{Times New Roman}
+\setromanfont{Times New Roman} 
+\setsansfont{Arial} 
+\setmonofont{Liberation Mono}
+\newfontfamily{\cyrillicfont}{Times New Roman} 
+\newfontfamily{\cyrillicfontrm}{Times New Roman}
+\newfontfamily{\cyrillicfontsf}{Arial}
+\newfontfamily{\cyrillicfonttt}{Liberation Mono}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc}
+\begin{document}
+	\noindent Полярная система координат
+
+	\begin{tikzpicture}[
+		every node/.style={font=\tiny, outer sep=1pt},
+		>={Stealth[width'=2pt 0.1, length=5pt]}
+	]
+		\foreach \r in {1, 2, 3}
+			\draw[thin, dotted] (0,0) circle (\r);
+		\draw[->] (-3.2,0) -- (3.2,0) node[right] {$x$};
+		\draw[->] (0,-3.2) -- (0,3.2) node[above] {$y$};
+	    \foreach \x in {-2, -1, 1, 2}
+	      \draw[xshift=\x cm] (0pt,1pt) -- (0pt,-1pt) node[below,fill=white] {$\x$};
+	    \foreach \y in {-2, -1, 1, 2}
+	      \draw[yshift=\y cm] (1pt,0pt) -- (-1pt,0pt) node[left,fill=white] {$\y$};
+	    \draw[fill] (0:0) circle (1pt) node[above left, fill=white] {$(0:0)$};
+	    \draw[fill] (180:3) circle (1pt) node[above right, fill=white] {$(180:3)$};
+	    \draw[fill] (60:2) circle (1pt) node[below right, fill=white] {$(60:2)$};
+	    \draw[fill=blue!20] (0,0) -- (1,0) arc[start angle=0, end angle=60, radius=1];
+	    \draw[dashed] (1, 0) -- (60:2) -- (0,0);
+	    \node at (0.55,0.25) {$60^{\circ}$};
+	    \draw[fill] (20:2) circle (1pt) node[below right] {$(20:2)$};
+	\end{tikzpicture}
+\end{document}
