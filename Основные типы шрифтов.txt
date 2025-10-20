@@ -1,0 +1,25 @@
+Основные типы шрифтов и их примеры, файлы и пакеты в которых они содержаться:
+Шрифты с засечками, Roman fonts, \rmfamily:
+    Times New Roman, /usr/share/fonts/corefonts/times.ttf, media-fonts/corefonts - Шрифт Microsoft, пропиетарный
+    Liberation Serif, /usr/share/fonts/liberation-fonts/LiberationSerif-Regular.ttf, media-fonts/liberation-fonts - Свободный, метрики совпадают с Times New Roman
+    PT Serif, /usr/share/fonts/paratype/PTF55F.ttf, media-fonts/paratype - Свободный, метрика не совпадает с Times New Roman
+    PT Astra Serif, /usr/share/fonts/paratype-astra/PTAstraSerif-Regular.ttf, media-fonts/paratype-astra - Свободный, метрики совпадают с Times New Roman
+    Noto Serif, /usr/share/fonts/noto/NotoSerif-Regular.ttf, media-fonts/noto - Свободный, не смотря на то что метрики не совпадают с Times New Roman, интересен сам по себе, так входит в набор шрифтов google noto, который содержит тысячи шрифтов с различным видом и языками.
+
+Шрифты без засечек, Sans-serif fonts, \sffamily:
+    Arial, /usr/share/fonts/corefonts/arial.ttf, media-fonts/corefonts - Шрифт Microsoft, пропиетарный
+    Liberation Sans, /usr/share/fonts/liberation-fonts/LiberationSans-Regular.ttf - Свободный, метрики совпадают с Arial
+    PT Sans, /usr/share/fonts/paratype/PTS55F.ttf, media-fonts/paratype - Свободный, метрики не совпадают с Arial
+    PT Astra Sans, /usr/share/fonts/paratype-astra/PTAstraSans-Regular.ttf, media-fonts/paratype-astra - Свободный, метрики не совпадают с Arial
+    Noto Sans, /usr/share/fonts/noto/NotoSans-Regular.ttf, media-fonts/noto - Свободный, не смотря на то что метрики не совпадают с Arial, интересен сам по себе, так как входит в набор шрифтов google noto, который содержит тысячи шрифтов с различным видом и языками.
+
+Моноширинные шррифты, Monospace, \ttfamily:
+    Courier New, /usr/share/fonts/corefonts/cour.ttf, media-fonts/corefonts - Шрифт Microsoft, пропиетарный
+    Liberation Mono, /usr/share/fonts/liberation-fonts/LiberationMono-Regular.ttf, media-fonts/liberation-fonts - Свобобный, метрики всех моноширинных шрифтов совпадают
+    PT Mono, /usr/share/fonts/paratype/PTM55F.ttf, media-fonts/paratype - Свобобный, метрики всех моноширинных шрифтов совпадают
+    Noto Sans Mono, /usr/share/fonts/noto/NotoSansMono-Regular.ttf, media-fonts/noto - Свободный, входит в набор шрифтов google noto, который содержит тысячи шрифтов с различным видом и языками.
+
+
+Кроме того, большое количество шрифтов содержиться в пакете dev-texlive/texlive-fontsextra
+
+
