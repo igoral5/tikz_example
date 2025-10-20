@@ -19,12 +19,13 @@
 	\noindent Декартова система координат
 
 	\begin{tikzpicture}[
-		every node/.style={font=\ttfamily\tiny, outer sep=1pt, fill=white},
-		>={Stealth[width'=2pt 0.1, length=5pt]}
+		every node/.style={font=\scriptsize, outer sep=2pt, fill=white},
+		>={Stealth[width'=2pt 0.1, length=5pt]},
+		scale=2
 	]
 		\draw[thin, dotted] (-3, -3) grid (3,3);
-		\draw[->] (-3.2,0) -- (3.2,0) node[right] {$X$};
-		\draw[->] (0,-3.2) -- (0,3.2) node[above] {$Y$};
+		\draw[->] (-3.2,0) -- (3.2,0) node[right] {$x$};
+		\draw[->] (0,-3.2) -- (0,3.2) node[above] {$y$};
 	    \foreach \x in {-2, -1, 1, 2}
 	      \draw[xshift=\x cm] (0pt,1pt) -- (0pt,-1pt) node[below,fill=white]
 	            {$\x$};

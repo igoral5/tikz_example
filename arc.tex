@@ -1,4 +1,4 @@
-\documentclass{minimal}
+\documentclass{article}
 \usepackage{xltxtra}
 \usepackage{fontspec}
 \usepackage{polyglossia}
@@ -13,12 +13,13 @@
     >={Stealth[width'=2pt 0.1, length=5pt]}
 }
 \begin{document}
+	\pagestyle{empty}
 	\noindent Две дуги радиусом $1.5~\text{см}$, начинаются в точке $(2, 0)$. У первой дуги начальный угол $-80^{\circ}$, конечный угол $150^{\circ}$. Вторая дуга начальный угол $80^{\circ}$, конечный угол $-150^{\circ}$.
 
-	\begin{tikzpicture}
-		\draw[thin,dotted] (-5,-5) grid (5,5);
-		\draw[->] (-5.2,0) -- (5.2,0) node[right] {$X$};
-		\draw[->] (0,-5.2) -- (0,5.2) node[above] {$Y$};
+	\begin{tikzpicture}[scale=1.6]
+		\draw[thin,dotted] (-4,-4) grid (4,4);
+		\draw[->] (-4.2,0) -- (4.2,0) node[right] {$x$};
+		\draw[->] (0,-4.2) -- (0,4.2) node[above] {$y$};
 		\node[below left] at (0,0) {$O$};
 		\draw[ultra thick] (0,0) -- (2,0) arc[start angle=-80, end angle=150, radius=1.5];
 		\draw[dashed] (2,0) -- ++(100:1.5) -- ++(150:1.5);

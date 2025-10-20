@@ -1,0 +1,35 @@
+\documentclass{article}
+\usepackage{xltxtra}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{russian}
+\setotherlanguage{english}
+\setmainfont{Times New Roman}
+\setromanfont{Times New Roman} 
+\setsansfont{Arial} 
+\setmonofont{Liberation Mono}
+\newfontfamily{\cyrillicfont}{Times New Roman} 
+\newfontfamily{\cyrillicfontrm}{Times New Roman}
+\newfontfamily{\cyrillicfontsf}{Arial}
+\newfontfamily{\cyrillicfonttt}{Liberation Mono}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc}
+\begin{document}
+    \pagestyle{empty}
+    \noindent Использование относительный координат
+
+    \begin{tikzpicture}[
+        every node/.style={outer sep=2pt, fill=white},
+        >={Stealth[width'=2pt 0.1, length=5pt]},
+        scale=2
+    ]
+        \draw[thin, dotted] (-3, -3) grid (3,3);
+        \draw[->] (-3.2,0) -- (3.2,0) node[right] {$x$};
+        \draw[->] (0,-3.2) -- (0,3.2) node[above] {$y$};
+        \foreach \x in {-2, -1, 1, 2}
+          \draw[xshift=\x cm] (0pt,1pt) -- (0pt,-1pt) node[below,fill=white] {$\x$};
+        \foreach \y in {-2, -1, 1, 2}
+          \draw[yshift=\y cm] (1pt,0pt) -- (-1pt,0pt) node[left,fill=white] {$\y$};
+        \draw[very thick, blue] (-3,-1) -- ++(1,0) -- ++(1,2) -- ++(2,0) -- ++(1,-2) -- ++(1,0);
+    \end{tikzpicture}
+\end{document}
