@@ -14,30 +14,24 @@
 \newfontfamily{\cyrillicfonttt}{Liberation Mono}
 \usepackage{amsmath}
 \usepackage{tikz}
-\usetikzlibrary{arrows.meta,shapes}
+\usetikzlibrary{arrows.meta,shapes,shapes.symbols}
 \tikzset{
     >={Stealth[width'=2pt 0.1, length=5pt]},
-    every node/.style={font=\rmfamily\small}
+    every node/.style={draw, color=red, fill=yellow, text=blue},
+    every edge/.style = {draw, ->, bend left}
 }
 \begin{document}
 	\pagestyle{empty}
-	\begin{tikzpicture}[scale=2]
-		\draw (4,2) node[draw, color=red, fill=yellow, text=blue] {TikZ};
-	\end{tikzpicture}
-	\vspace{0.5cm}
-
-	\begin{tikzpicture}[scale=2]
-		\node (r) at (0,2) [draw, rectangle] {Прямоугольник};
-		\node (c) at (1.5,0) [draw, circle] {Окружность};
-		\node (e) at (3,2) [draw, ellipse] {Эллипс};
-		\draw[->] (r.east) -- (e.west);
-		\draw[->] (r.south) -- (c.north west);
-		\draw[->] (e.south) -- (c.north east);
-	\end{tikzpicture}
-	\vspace{0.5cm}
-
-	\begin{tikzpicture}[scale=2]
-		\draw[fill=red] (4,2) circle[radius=0.1];
-		\node at (4,2) [draw, rectangle] {rectangle};
+	\begin{tikzpicture}
+		\node (r) at (90:3) {Прямогульник};
+		\node[circle] (c) at (18:3) {Окружность};
+		\node[ellipse] (e) at (-54:3) {Эллипс};
+		\node[star, star point ratio=2.5] (s) at (234:3) {Звезда};
+		\node[cloud, aspect=2] (cl) at (162:3) {Облако};
+		\draw (r) edge (c);
+		\draw (c) edge (e);
+		\draw (e) edge (s);
+		\draw (s) edge (cl);
+		\draw (cl) edge (r);
 	\end{tikzpicture}
 \end{document}

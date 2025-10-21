@@ -1,0 +1,40 @@
+\documentclass{article}
+\usepackage{xltxtra}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{russian}
+\setotherlanguage{english}
+\setmainfont{Times New Roman}
+\setromanfont{Times New Roman} 
+\setsansfont{Arial} 
+\setmonofont{Liberation Mono}
+\newfontfamily{\cyrillicfont}{Times New Roman}
+\newfontfamily{\cyrillicfontrm}{Times New Roman}
+\newfontfamily{\cyrillicfontsf}{Arial}
+\newfontfamily{\cyrillicfonttt}{Liberation Mono}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{quotes,babel,arrows.meta,positioning}
+\tikzset{
+    >={Stealth[width'=2pt 0.1, length=5pt]},
+}
+\begin{document}
+    \pagestyle{empty}
+    \begin{tikzpicture}[
+        every node/.style = {text=white, minimum width=1cm},
+        every edge/.style = {draw,->},
+        every edge quotes/.style = {text=black, auto=right, font=\ttfamily\tiny, inner sep=2pt, sloped},
+        scale=2
+    ]
+        \node (tex) [fill=orange] {\TeX};
+        \node (pdf) [fill={rgb:red,244;green,15;blue,2},right=of tex] {PDF};
+        \node (dvi) [fill=blue, above=of tex] {DVI};
+        \node (ps)  [fill=black!60, above=of pdf] {PS};
+        \draw 
+            (tex)   edge["pdflatex"]    (pdf)
+                    edge["latex"]       (dvi)
+            (dvi)   edge["dvips"]       (ps)
+                    edge["dvipdfmx"]    (pdf)
+            (ps)    edge["ps2pdf"]      (pdf);
+    \end{tikzpicture}
+\end{document}
